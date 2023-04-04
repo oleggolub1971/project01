@@ -79,3 +79,19 @@ print(f'Три песни звучат {time1}')
 print('Пункт D/B:')
 time2 = datetime.time(1, time_dct, time_dct_sek).strftime('%M:%S')
 print(f'Три песни звучат {time2}')
+
+# Такое решение сработает невсегда( 
+# лучше использовать timedelta()
+# например, для списка
+from datetime import timedelta
+from math import modf
+from random import sample
+
+
+total_time = timedelta()
+
+for song in sample(my_favorite_songs, 3):
+    s, m = modf(song[1])
+    total_time += timedelta(minutes=int(m), seconds=int(s * 100))
+
+print(f'Три песни звучат {total_time} минут')
