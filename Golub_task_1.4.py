@@ -36,3 +36,5 @@ for item in titles.keys():
         total_quantity = total_quantity + store[titles[item]][i]['quantity']
         total_price = total_price + store[titles[item]][i]['price']*store[titles[item]][i]['quantity']
         print(f'{item} - {total_quantity} шт., стоимость {total_price} руб')
+        
+# Отлично
